@@ -4,15 +4,20 @@ import CommentForm from './CommentForm.js';
 
 export default class CommentBox extends React.Component {
   handleCommentSubmit(commentData){
-    
+
+  }
+
+  constructor(props){
+    super(props);
+    this.state = {data:[]};
   }
 
   render() {
   return(
   <View>
   <Text>Comment It</Text>
-  <CommentList>
-    <CommentForm>
+  <CommentList data={this.state.data  }>
+    <CommentForm onCommentSubmit={this.handleCommentSubmit}>
     </CommentForm>
   </CommentList>
   </View>

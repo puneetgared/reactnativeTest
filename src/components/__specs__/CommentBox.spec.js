@@ -29,4 +29,20 @@ describe('<commentbox>', () => {
     expect(wrapper.find(CommentForm)).to.have.length(1);
   });
 
+  it('should have an initial state',() => {
+    expect(wrapper.state('data').length).to.equal(0);
+  });
+
+  it('should pass its state data as props to commentList component',() => {
+    expect(wrapper.find(CommentList).props().data).to.eql(wrapper.state('data'));
+  });
+
+  it('should pass its handleCommentSubmit method as props to CommentForm component',() =>{
+    commentBox = new CommentBox();
+
+    var definedMethod = commentBox.handleCommentSubmit;
+    var passedMethod = wrapper.find(CommentForm).props().onCommentSubmit;
+    expect(definedMethod.toString()).to.equal(passedMethod.toString());
+
+  });
 });
