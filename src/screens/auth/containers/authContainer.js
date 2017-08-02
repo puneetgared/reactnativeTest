@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react-native';
-import RegisterComponent from './../components/registerComponent';
+import RegisterComponent from './../components/registerComponent.android';
 import { connect } from 'react-redux';
 import { registerUserRequest } from './../../../modules/auth/actions';
 
